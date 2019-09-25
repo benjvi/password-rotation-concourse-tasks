@@ -1,0 +1,9 @@
+---
+platform: linux
+
+inputs:
+- name: rotate-password-tasks
+- name: env # contains the env file with target OpsMan Information
+
+params:
+  ENV_FILE: env.yml
