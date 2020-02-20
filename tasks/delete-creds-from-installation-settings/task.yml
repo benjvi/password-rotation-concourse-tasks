@@ -1,0 +1,23 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: engineerbetter/pcf-ops
+    tag: latest
+
+inputs:
+- name: rotate-password-tasks
+- name: installation_settings_input
+
+outputs:
+- name: installation_settings_output
+
+params:
+  TILE_INSTALLATION_NAME: "p-bosh"
+  JOB_INSTALLATION_NAME: "director"
+  CREDENTIAL_IDS: 
+
+run:
+  path: rotate-password-tasks/tasks/delete-creds-from-installation-settings/task.sh
